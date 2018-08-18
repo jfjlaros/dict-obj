@@ -2,6 +2,8 @@ from os.path import dirname, abspath
 
 from configparser import ConfigParser
 
+from .dict_obj import obj
+
 
 config = ConfigParser()
 config.readfp(open('{}/setup.cfg'.format(dirname(abspath(__file__)))))
@@ -10,12 +12,6 @@ _copyright_notice = 'Copyright (c) {} {} <{}>'.format(
     config.get('metadata', 'copyright'),
     config.get('metadata', 'author'),
     config.get('metadata', 'author_email'))
-
-usage = [config.get('metadata', 'description'), _copyright_notice]
-
-
-def doc_split(func):
-    return func.__doc__.split('\n\n')[0]
 
 
 def version(name):
