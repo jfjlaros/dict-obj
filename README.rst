@@ -24,7 +24,20 @@ Object interface for a Python dictionary
 
 ----
 
-This package provides ...
+This package provides a dict-like object that allows keys to be accessed via
+member variables. Both nested dictionaries as well as lists are supported.
+
+Example:
+
+.. code:: python
+
+    >>> from dict_obj import obj
+    >>>
+    >>> d = obj({'a': 1, 'b': {'c': 1}})
+    >>> d.b.c
+    1
+    >>> d['b'].c
+    1
 
 Please see ReadTheDocs_ for the latest documentation.
 
