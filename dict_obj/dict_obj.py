@@ -25,4 +25,4 @@ class obj(object):
         return self.__getattr__(name)
 
     def __setitem__(self, name, value):
-        self._dict[name] = value
+        self.__setattr__(name, value)
